@@ -20,7 +20,8 @@
 \usepackage{tabularx}
 \usepackage{amsmath}
 \usepackage{kotex}
-
+\usepackage{fontspec}
+\setmainfont{NanumGothic}[AutoFakeSlant]
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
@@ -47,10 +48,12 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+\newcommand{\resumeItem}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      {#1} & #2 \\
+      \textit{\small#3} {\small #4 \vspace{-2pt}} & {\small #5} \\
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSummary}[1]{
@@ -63,8 +66,8 @@
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      {\small#3} & {\small #4} \\
+      {#1} & #2 \\
+      \textit{\small#3} & {\small #4} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -76,19 +79,20 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeProject}[2]{
+\newcommand{\resumeProject}[5]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} \\
-      \small{#2} \\
+      {#1} & #2 \\
+      \textit{\small#3} {\small #4 \vspace{-2pt}} & {\small #5} \\
     \end{tabular*}\vspace{-5pt}
 }
+
 
 \newcommand{\resumeResearch}[5]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      {\small#3} {\small #4 \vspace{-2pt}} & {\small #5} \\
+      {#1} & #2 \\
+      \textit{\small#3} {\small #4 \vspace{-2pt}} & {\small #5} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -99,18 +103,19 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSkills}[1]{
+\newcommand{\resumeSkills}[2]{
   \item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      #1
-    \end{tabular*}
+      #1 \\ 
+      \textit{\small#2}
+    \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeCommunity}[3]{
+\newcommand{\resumeCommunity}[5]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      {\small#3} \\
+      {#1} & #2 \\
+      \textit{\small#3} {\small #4 \vspace{-2pt}} & {\small #5} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -149,8 +154,13 @@
     \resumeSubheading
       {관심분야}{}
       {엣지 컴퓨팅, 강화학습}{}
-
-
+  \resumeSubHeadingListEnd
+  
+%-----------Skills-----------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSkills{{Languages}}{C, C++, Python}
+    \resumeSkills{{Frameworks}}{SB3, Gymnasium, Keras/Tensorflow, PyTorch}
   \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
@@ -158,92 +168,76 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {B.S.}{부산대학교}
-      {공과대학 전기컴퓨터공학부 정보컴퓨터공학전공}{2019.03 - 2025.02}
-      \resumeItemListStart
-          \resumeItem{GPA: 3.7}
-      \resumeItemListEnd
-
+      {공과대학 전기컴퓨터공학부 정보컴퓨터공학전공 {(GPA: 3.7)}}{2019.03 - 2025.02}
   \resumeSubHeadingListEnd
   
 %-----------EXPERIENCE-----------------
 \section{Experiences}
   \resumeSubHeadingListStart
-
     \resumeResearch
       {학부연구생}{부산대학교}
       {연결지능 시스템 연구실 (지도교수: 김태운 교수님)}{}{2023.03 - 2025.02}
-
+    \resumeResearch
+      {연구연수생}{한국전자통신연구원(ETRI)}
+      {초지능창의연구소 모빌리티로봇연구본부 울산지능화융합연구실}{}{2024.07 - 2025.08}
   \resumeSubHeadingListEnd
 
+%-----------Papers-----------------
+\section{Papers}
+  \resumeSubHeadingListStart
+    \resumeItem{머신러닝 기반 다중운집 인파 밀집도 예측 및 실시간 위치 추적 시스템 개발}{한국차세대컴퓨팅학회}
+      {천주희, 장은서, \textbf{장인성}, 정희영, 김형철, 김태운}{}{2024, 20(1) p.94-113}
+    \resumeItem{저비용 드론을 이용한 딥러닝 기반 콘크리트 건축물 안전진단 자동화 시스템}{한국차세대컴퓨팅학회}
+      {\textbf{장인성}, 정희영, 김태운}{}{2024, 20(2) p.39-55}
+    \resumeSubHeadingListEnd
 
 %-----------Projects-----------------
-
 \section{Projects}
   \resumeSubHeadingListStart
     \resumeProject
-      {연구실 프로젝트}
-         {LoRa 통신을 이용한 스마트폰 센서 정보 전송 앱 개발}
-         \resumeItemListStart
-             \resumeItem{LoRa 통신, Serial 통신, 안드로이드 개발}
-         \resumeItemListEnd
-    
+      {사용자 경험 개선을 위한 WiFi/BLE 기반의 사용자 상태 감지 기술 개발}{LG전자 산학과제}
+      {임베디드 AI 개발, WiFi/BLE 모니터링}{}{2024.03 - 2024.12}  
     \resumeProject
-      {연구실 프로젝트}
-        {드론 실내 자율주행 및 균열 탐지}
-      \resumeItemListStart
-        \resumeItem{실내 자율주행 알고리즘 개발, 오토인코더 기반 균열 탐지 모델 최적화}
-    \resumeItemListEnd
-        \resumeProject
-      {LG Aimers 4기}
-         {MQL 데이터 기반 B2B 영업 기회 창출 예측 모델 개발}
-         \resumeItemListStart
-             \resumeItem{EDA, 트리 기반 모델 학습}
-         \resumeItemListEnd
-
+      {멀티모달 AI를 이용한 노인복지시설 안전사고 실시간 모니터링 플랫폼 개발}{졸업과제}
+      {모델 개발 및 최적화, 엣지 컴퓨팅}{}{2024.03 - 2024.11}
     \resumeProject
-      {졸업과제}
-        {멀티모달 AI를 이용한 노인복지시설 안전사고 실시간 모니터링 플랫폼 개발}
-      \resumeItemListStart
-        \resumeItem{멀티모달 모델 개발, 모델 경량화, 엣지 컴퓨팅}
-    \resumeItemListEnd
-        \resumeProject
-      {LG전자 산학과제}
-        {사용자 경험 개선을 위한 WiFi/BLE 기반의 사용자 상태 감지 기술 개발}
-      \resumeItemListStart
-        \resumeItem{임베디드 개발, WiFi/BLE 모니터링}
-    \resumeItemListEnd
-
+      {드론 실내 자율주행 및 균열 탐지}{연구실 프로젝트}
+      {실내 자율주행 알고리즘 개발, 오토인코더 기반 균열 탐지 모델 최적화}{}{2023.08 - 2023.12}
+    \resumeProject
+      {LoRa 통신을 이용한 스마트폰 센서 정보 전송 앱 개발}{연구실 프로젝트}
+      {LoRa 통신, Serial 통신, 안드로이드 개발}{}{2023.03 - 2023.07}
   \resumeSubHeadingListEnd
 
-%-----------Skills-----------------
-
-\section{Skills}
+%-----------Competition-----------------
+\section{Competition}
   \resumeSubHeadingListStart
-    \resumeSkills{\textbf{Programming} - C, C++, Python}
-    \resumeSkills{\textbf{Some skills} - SB3, RLlib, Gymnasium, PyTorch, Keras/Tensorflow}
+    \resumeProject
+      {생성 AI의 가짜(Fake) 음성 검출 및 탐지}{SW중심대학 디지털 경진대회}
+      {모델 구현}{}{2024.07 - 2024.08}
+    \resumeProject
+      {MQL 데이터 기반 B2B 영업 기회 창출 예측 모델 개발}{LG Aimers 4기}
+      {EDA, 트리 기반 모델 학습}{}{2024.01 - 2024.02}
   \resumeSubHeadingListEnd
 
-
-
-    
-%-----------Papers-----------------
-\section{Papers}
-    \resumeSubHeadingListStart
-        \resumeItem{\textbf{저비용 드론을 이용한 딥러닝 기반 콘크리트 건축물 안전진단 자동화 시스템} \\ 
-        {장인성, 정희영, 김태운 [한국차세대컴퓨팅학회, 2024, 20(2) p.39\~{}55]}}
-        \resumeItem{\textbf{머신러닝 기반 다중운집 인파 밀집도 예측 및 실시간 위치 추적 시스템 개발} \\ 
-        {천주희, 장은서, 장인성, 정희영, 김형철, 김태운 [한국차세대컴퓨팅학회, 2024, 20(1) p.94\~{}113] }}
-
-    \resumeSubHeadingListEnd
+%-----------Courses Taken-----------------
+\section{Courses Taken}
+  \resumeSubHeadingListStart
+    \resumeSkills{{4-2}}{캡스톤디자인}
+    \resumeSkills{{4-1}}{유닉스응용프로그래밍, 클라우드컴퓨팅, 프로그래밍언어론}
+    \resumeSkills{{3-2}}{지능형시스템, 데이터마이닝, 컴퓨터네트워크, 데이터베이스, 소프트웨어공학, 임베디드시스템설계및실험}
+    \resumeSkills{{3-1}}{운영체제, 컴퓨터구조, 컴퓨터알고리즘, 데이터통신, 정보보안, 소프트웨어설계및실험}
+    \resumeSkills{{2-2}}{자료구조, AI프로그래밍, 시스템소프트웨어, 플랫폼기반프로그래밍, 확률통계, 이산수학(II), 논리회로설계및실험}
+    \resumeSkills{{2-1}}{C++프로그래밍, 오픈소스소프트웨어개발입문, 공학선형대수학, 이산수학(I),  논리회로설계, 컴퓨터기초실험}
+    \resumeSkills{{1-2}}{C프로그래밍, 전기회로, 공학수학(I), 일반물리학(II), 일반물리학실험}
+    \resumeSkills{{1-1}}{컴퓨터시스템입문, 공학미적분학, 일반물리학(I)}
+  \resumeSubHeadingListEnd
 
 %-----------Community-----------------
 \section{Community}
-    \resumeSubHeadingListStart
-        \resumeCommunity{AID}{}
-        {부산대학교 인공지능 동아리}
-   
-
-    \resumeSubHeadingListEnd
+  \resumeSubHeadingListStart
+    \resumeCommunity{AID}{회원}
+      {부산대학교 인공지능 동아리}{}{2023.09 - 2024.12}
+  \resumeSubHeadingListEnd
 
 %-------------------------------------------
 \end{document}

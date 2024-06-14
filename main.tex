@@ -119,6 +119,14 @@
     \end{tabular*}\vspace{-5pt}
 }
 
+\newcommand{\resumeQualification}[3]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      {#1} & #2 \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-5pt}
+}
+
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
@@ -168,7 +176,15 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {B.S.}{부산대학교}
-      {공과대학 전기컴퓨터공학부 정보컴퓨터공학전공 {(GPA: 3.7)}}{2019.03 - 2025.02}
+      {공과대학 전기컴퓨터공학부 정보컴퓨터공학전공 {(GPA: 3.7/4.5)}}{2019.03 - 2025.02}
+  \resumeSubHeadingListEnd
+
+%-----------AWARDS-----------------
+\section{Awards}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {성적우수장학금}{부산대학교}
+      {전액장학금}{Fall 2023, Spring 2024}
   \resumeSubHeadingListEnd
   
 %-----------EXPERIENCE-----------------
@@ -176,7 +192,7 @@
   \resumeSubHeadingListStart
     \resumeResearch
       {학부연구생}{부산대학교}
-      {연결지능 시스템 연구실 (지도교수: 김태운 교수님)}{}{2023.03 - 2025.02}
+      {연결지능 시스템 연구실 (지도교수: 김태운 교수님)}{}{2023.03 - }
     \resumeResearch
       {연구연수생}{한국전자통신연구원(ETRI)}
       {초지능창의연구소 모빌리티로봇연구본부 울산지능화융합연구실}{}{2024.07 - 2024.08}
@@ -199,7 +215,7 @@
       {임베디드 AI 개발, WiFi/BLE 모니터링}{}{2024.03 - 2024.12}  
     \resumeProject
       {멀티모달 AI를 이용한 노인복지시설 안전사고 실시간 모니터링 플랫폼 개발}{졸업과제}
-      {모델 개발 및 최적화, 엣지 컴퓨팅}{}{2024.03 - 2024.11}
+      {모델 개발 및 최적화, 엣지 컴퓨팅}{}{2024.04 - 2024.11}
     \resumeProject
       {드론 실내 자율주행 및 균열 탐지}{연구실 프로젝트}
       {실내 자율주행 알고리즘 개발, 오토인코더 기반 균열 탐지 모델 최적화}{}{2023.08 - 2023.12}
@@ -223,7 +239,7 @@
 \section{Courses Taken}
   \resumeSubHeadingListStart
     \resumeSkills{{Fall 2024}}{캡스톤디자인}
-    \resumeSkills{{Spring 2024}}{유닉스응용프로그래밍, 클라우드컴퓨팅, 프로그래밍언어론}
+    \resumeSkills{{Spring 2024}}{강화학습(대학원 공동수강), 유닉스응용프로그래밍, 클라우드컴퓨팅, 프로그래밍언어론}
     \resumeSkills{{Fall 2023}}{지능형시스템, 데이터마이닝, 컴퓨터네트워크, 데이터베이스, 소프트웨어공학, 임베디드시스템설계및실험}
     \resumeSkills{{Spring 2023}}{운영체제, 컴퓨터구조, 컴퓨터알고리즘, 데이터통신, 정보보안, 소프트웨어설계및실험}
     \resumeSkills{{Fall 2020}}{자료구조, AI프로그래밍, 시스템소프트웨어, 플랫폼기반프로그래밍, 확률통계, 이산수학(II), 논리회로설계및실험}
@@ -231,6 +247,7 @@
     \resumeSkills{{Fall 2019}}{C프로그래밍, 전기회로, 공학수학(I), 일반물리학(II), 일반물리학실험}
     \resumeSkills{{Spring 2019}}{컴퓨터시스템입문, 공학미적분학, 일반물리학(I)}
   \resumeSubHeadingListEnd
+  
 
 %-----------Community-----------------
 \section{Community}

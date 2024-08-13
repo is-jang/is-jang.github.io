@@ -9,6 +9,13 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            overflow: hidden;
+        }
+        #pdf-container {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
         }
         iframe {
             width: 100%;
@@ -18,6 +25,24 @@
     </style>
 </head>
 <body>
-    <iframe src="https://is-jang.github.io/resume.pdf" frameborder="0"></iframe>
+    <div id="pdf-container">
+        <iframe src="https://is-jang.github.io/resume.pdf" frameborder="0"></iframe>
+    </div>
+    <script>
+        document.getElementById('pdf-container').addEventListener('touchstart', function(event) {
+            var startY = event.touches[0].clientY;
+            var startX = event.touches[0].clientX;
+            var startScrollY = this.scrollTop;
+            var startScrollX = this.scrollLeft;
+            
+            this.addEventListener('touchmove', function(event) {
+                var moveY = event.touches[0].clientY - startY;
+                var moveX = event.touches[0].clientX - startX;
+                this.scrollTop = startScrollY - moveY;
+                this.scrollLeft = startScrollX - moveX;
+                event.preventDefault();
+            }, { passive: false });
+        });
+    </script>
 </body>
 </html>
